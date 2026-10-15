@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="it" dir="ltr" class="scroll-smooth">  
+<html lang="it" dir="ltr" class="scroll-smooth dark">  
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Nexus Hub - Portale Polivalente</title>
+    <title>NexusHub - Ultimate Entertainment Portal</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,11 +14,10 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0284c7',
-                            600: '#0369a1',
-                            700: '#075985',
+                            50: '#f0fdf4',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
                         }
                     }
                 }
@@ -28,7 +27,7 @@
     
     <!-- Font Awesome & Font Inter -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -37,55 +36,49 @@
     </style>
 </head>  
 
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
 
     <!-- HEADER & NAVBAR -->
-    <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 
                 <!-- Logo -->
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-bold text-xl shadow-md">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 text-white flex items-center justify-center font-extrabold text-xl shadow-lg shadow-brand-500/20">
                         N
                     </div>
-                    <span class="font-bold text-xl tracking-tight text-slate-900 dark:text-white">NexusHub</span>
+                    <span class="font-extrabold text-xl tracking-tight text-white">Nexus<span class="text-brand-500">Hub</span></span>
                 </div>
 
                 <!-- Navigation Desktop -->
-                <nav class="hidden md:flex space-x-1 lg:space-x-4">
-                    <button onclick="switchTab('games')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-gamepad mr-2"></i><span data-i18n="nav_games">Giochi</span>
+                <nav class="hidden md:flex space-x-1 lg:space-x-2">
+                    <button onclick="switchTab('games')" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold hover:bg-slate-800 text-slate-300 hover:text-white transition flex items-center gap-2">
+                        <i class="fa-solid fa-gamepad text-brand-500"></i><span data-i18n="nav_games">Giochi</span>
                     </button>
-                    <button onclick="switchTab('radio')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-radio mr-2"></i><span data-i18n="nav_radio">Radio</span>
+                    <button onclick="switchTab('radio')" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold hover:bg-slate-800 text-slate-300 hover:text-white transition flex items-center gap-2">
+                        <i class="fa-solid fa-radio text-brand-500"></i><span data-i18n="nav_radio">Radio</span>
                     </button>
-                    <button onclick="switchTab('relax')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-spa mr-2"></i><span data-i18n="nav_relax">Area Relax</span>
+                    <button onclick="switchTab('relax')" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold hover:bg-slate-800 text-slate-300 hover:text-white transition flex items-center gap-2">
+                        <i class="fa-solid fa-spa text-brand-500"></i><span data-i18n="nav_relax">Area Relax</span>
                     </button>
-                    <button onclick="switchTab('quiz')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-brain mr-2"></i><span data-i18n="nav_quiz">Quiz & Storie AI</span>
+                    <button onclick="switchTab('quiz')" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold hover:bg-slate-800 text-slate-300 hover:text-white transition flex items-center gap-2">
+                        <i class="fa-solid fa-brain text-brand-500"></i><span data-i18n="nav_quiz">Quiz & AI</span>
                     </button>
-                    <button onclick="switchTab('chat')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-comments mr-2"></i><span data-i18n="nav_chat">Community</span>
+                    <button onclick="switchTab('chat')" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold hover:bg-slate-800 text-slate-300 hover:text-white transition flex items-center gap-2">
+                        <i class="fa-solid fa-comments text-brand-500"></i><span data-i18n="nav_chat">Community</span>
                     </button>
                 </nav>
 
                 <!-- Controls: Language & Theme -->
                 <div class="flex items-center gap-3">
-                    <!-- Language Selector -->
-                    <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm rounded-lg px-2.5 py-1.5 border-0 focus:ring-2 focus:ring-brand-500">
+                    <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-slate-800 text-slate-200 text-sm rounded-xl px-3 py-2 border border-slate-700 focus:outline-none focus:border-brand-500">
                         <option value="it">🇮🇹 IT</option>
                         <option value="en">🇬🇧 EN</option>
                         <option value="fr">🇫🇷 FR</option>
                         <option value="es">🇪🇸 ES</option>
-                        <option value="ar">🇦🇪 AR (RTL)</option>
+                        <option value="ar">🇦🇪 AR</option>
                     </select>
-
-                    <!-- Theme Toggle -->
-                    <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Toggle Theme">
-                        <i id="themeIcon" class="fa-solid fa-moon"></i>
-                    </button>
                 </div>
             </div>
         </div>
@@ -94,174 +87,147 @@
     <!-- MAIN CONTENT CONTAINER -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
-        <!-- BANNER EROICO DI BENVENUTO -->
-        <section class="relative rounded-2xl overflow-hidden mb-8 shadow-xl bg-slate-900 text-white">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-30">
-            <div class="relative z-10 p-8 md:p-12 max-w-2xl">
-                <span class="bg-brand-500/20 text-brand-300 border border-brand-500/30 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block" data-i18n="hero_badge">Portale Intrattenimento</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight" data-i18n="hero_title">Esplora, Rilassati e Gioca in un Unico Posto</h1>
-                <p class="text-slate-300 text-base md:text-lg mb-6" data-i18n="hero_subtitle">Accedi a giochi istantanei, stazioni radio live, ambienti sonori di meditazione e contenuti generati dall'intelligenza artificiale.</p>
+        <!-- HERO BANNER -->
+        <section class="relative rounded-3xl overflow-hidden mb-10 shadow-2xl bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 border border-slate-800">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80')] opacity-10 bg-cover bg-center"></div>
+            <div class="relative z-10 p-8 md:p-12 max-w-3xl">
+                <span class="bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-block" data-i18n="hero_badge">✨ Universal Entertainment Hub</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight tracking-tight text-white" data-i18n="hero_title">Esplora, Gioca e Rilassati Senza Limiti</h1>
+                <p class="text-slate-400 text-base md:text-lg mb-6 leading-relaxed" data-i18n="hero_subtitle">Tutto ciò che ami in un'unica piattaforma multilingue istantanea, interattiva e gratuita al 100%.</p>
             </div>
         </section>
 
-        <!-- SEZIONE 1: GIOCHI NATIVI JS (NESSUN IFRAME, ZERO ERRORE 404) -->
+        <!-- SEZIONE 1: GIOCHI NATIVI (SNAKE & TRIS) -->
         <section id="tab-games" class="tab-content active space-y-6">
-            <div class="flex justify-between items-center">
-                <h2 class="text-2xl font-bold flex items-center gap-2">
-                    <i class="fa-solid fa-gamepad text-brand-500"></i> <span data-i18n="sec_games">Giochi HTML5</span>
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold flex items-center gap-3 text-white">
+                    <div class="p-2.5 rounded-xl bg-brand-500/10 text-brand-500 border border-brand-500/20"><i class="fa-solid fa-gamepad"></i></div>
+                    <span data-i18n="sec_games">Arcade & Mini-Games</span>
                 </h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 
-                <!-- GIOCO 1: SNAKE GAME (NATIVO CANVAS) -->
-                <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md border border-slate-200 dark:border-slate-700 p-4">
-                    <div class="flex justify-between items-center mb-3">
-                        <h3 class="font-bold text-lg">Snake Classic</h3>
-                        <span class="text-xs bg-brand-500/10 text-brand-500 font-bold px-2 py-1 rounded">Punti: <span id="snakeScore">0</span></span>
+                <!-- SNAKE GAME -->
+                <div class="bg-slate-900 rounded-2xl p-6 border border-slate-800 shadow-xl flex flex-col items-center">
+                    <div class="w-full flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-lg text-white">🐍 Snake Classic</h3>
+                        <span class="text-xs bg-brand-500/10 text-brand-400 font-bold px-3 py-1 rounded-full border border-brand-500/20">Punti: <span id="snakeScore">0</span></span>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <canvas id="snakeCanvas" width="300" height="300" class="bg-slate-900 rounded-lg shadow border border-slate-700"></canvas>
-                        
-                        <div class="mt-4 flex flex-col items-center gap-2 w-full max-w-[200px]">
-                            <button onclick="changeSnakeDir('UP')" class="w-12 h-10 bg-slate-200 dark:bg-slate-700 rounded-lg font-bold">▲</button>
-                            <div class="flex gap-4">
-                                <button onclick="changeSnakeDir('LEFT')" class="w-12 h-10 bg-slate-200 dark:bg-slate-700 rounded-lg font-bold">◀</button>
-                                <button onclick="resetSnake()" class="px-3 h-10 bg-brand-500 text-white rounded-lg text-xs font-bold">Reset</button>
-                                <button onclick="changeSnakeDir('RIGHT')" class="w-12 h-10 bg-slate-200 dark:bg-slate-700 rounded-lg font-bold">▶</button>
-                            </div>
-                            <button onclick="changeSnakeDir('DOWN')" class="w-12 h-10 bg-slate-200 dark:bg-slate-700 rounded-lg font-bold">▼</button>
+                    <canvas id="snakeCanvas" width="280" height="280" class="bg-slate-950 rounded-xl shadow-inner border border-slate-800 mb-4"></canvas>
+                    <div class="flex flex-col items-center gap-2 w-full max-w-[220px]">
+                        <button onclick="changeSnakeDir('UP')" class="w-14 h-11 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition shadow">▲</button>
+                        <div class="flex gap-4">
+                            <button onclick="changeSnakeDir('LEFT')" class="w-14 h-11 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition shadow">◀</button>
+                            <button onclick="resetSnake()" class="px-4 h-11 bg-brand-600 hover:bg-brand-500 text-white rounded-xl text-xs font-bold transition shadow">Reset</button>
+                            <button onclick="changeSnakeDir('RIGHT')" class="w-14 h-11 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition shadow">▶</button>
                         </div>
+                        <button onclick="changeSnakeDir('DOWN')" class="w-14 h-11 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition shadow">▼</button>
                     </div>
                 </div>
 
-                <!-- GIOCO 2: TIC TAC TOE (TRIS NATIVO) -->
-                <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md border border-slate-200 dark:border-slate-700 p-4">
-                    <div class="flex justify-between items-center mb-3">
-                        <h3 class="font-bold text-lg">Tris / Tic-Tac-Toe</h3>
-                        <span id="tttStatus" class="text-xs bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded font-semibold">Turno: X</span>
+                <!-- TIC TAC TOE -->
+                <div class="bg-slate-900 rounded-2xl p-6 border border-slate-800 shadow-xl flex flex-col items-center justify-between">
+                    <div class="w-full flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-lg text-white">❌ Tris / Tic-Tac-Toe</h3>
+                        <span id="tttStatus" class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full border border-slate-700 font-semibold">Turno: X</span>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <div id="tttBoard" class="grid grid-cols-3 gap-2 w-64 h-64 bg-slate-200 dark:bg-slate-700 p-2 rounded-xl">
-                            <button onclick="makeMove(0)" class="ttt-cell bg-white dark:bg-slate-800 text-3xl font-extrabold rounded-lg flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-700 transition"></button>
-                            <button onclick="makeMove(1)" class="ttt-cell bg-white dark:bg-slate-800 text-3xl font-extrabold rounded-lg flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-700 transition"></button>
-                            <button onclick="makeMove(2)" class="ttt-cell bg-white dark:bg-slate-800 text-3xl font-extrabold rounded-lg flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-700 transition"></button>
-                            <button onclick="makeMove(3)" class="ttt-cell bg-white dark:bg-slate-800 text-3xl font-extrabold rounded-lg flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-700 transition"></button>
-                            <button onclick="makeMove(4)" class="ttt-cell bg-white dark:bg-slate-800 text-3xl font-extrabold rounded-lg flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-700 transition"></button>
-                            <button onclick="makeMove(5)" class="ttt-cell bg-white dark:bg-slate-800 text-3xl font-extrabold rounded-lg flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-700 transition"></button>
-                            <button onclick="makeMove(6)" class="ttt-cell bg-white dark:bg-slate-800 text-3xl font-extrabold rounded-lg flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-700 transition"></button>
-                            <button onclick="makeMove(7)" class="ttt-cell bg-white dark:bg-slate-800 text-3xl font-extrabold rounded-lg flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-700 transition"></button>
-                            <button onclick="makeMove(8)" class="ttt-cell bg-white dark:bg-slate-800 text-3xl font-extrabold rounded-lg flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-700 transition"></button>
-                        </div>
-                        <button onclick="resetTTT()" class="mt-4 px-4 py-2 bg-brand-500 text-white rounded-lg text-sm font-medium hover:bg-brand-600 transition">Nuova Partita</button>
+                    <div id="tttBoard" class="grid grid-cols-3 gap-3 w-64 h-64 bg-slate-950 p-3 rounded-2xl border border-slate-800 my-auto">
+                        <button onclick="makeMove(0)" class="ttt-cell bg-slate-900 hover:bg-slate-800 text-3xl font-black rounded-xl text-white transition flex items-center justify-center shadow"></button>
+                        <button onclick="makeMove(1)" class="ttt-cell bg-slate-900 hover:bg-slate-800 text-3xl font-black rounded-xl text-white transition flex items-center justify-center shadow"></button>
+                        <button onclick="makeMove(2)" class="ttt-cell bg-slate-900 hover:bg-slate-800 text-3xl font-black rounded-xl text-white transition flex items-center justify-center shadow"></button>
+                        <button onclick="makeMove(3)" class="ttt-cell bg-slate-900 hover:bg-slate-800 text-3xl font-black rounded-xl text-white transition flex items-center justify-center shadow"></button>
+                        <button onclick="makeMove(4)" class="ttt-cell bg-slate-900 hover:bg-slate-800 text-3xl font-black rounded-xl text-white transition flex items-center justify-center shadow"></button>
+                        <button onclick="makeMove(5)" class="ttt-cell bg-slate-900 hover:bg-slate-800 text-3xl font-black rounded-xl text-white transition flex items-center justify-center shadow"></button>
+                        <button onclick="makeMove(6)" class="ttt-cell bg-slate-900 hover:bg-slate-800 text-3xl font-black rounded-xl text-white transition flex items-center justify-center shadow"></button>
+                        <button onclick="makeMove(7)" class="ttt-cell bg-slate-900 hover:bg-slate-800 text-3xl font-black rounded-xl text-white transition flex items-center justify-center shadow"></button>
+                        <button onclick="makeMove(8)" class="ttt-cell bg-slate-900 hover:bg-slate-800 text-3xl font-black rounded-xl text-white transition flex items-center justify-center shadow"></button>
                     </div>
+                    <button onclick="resetTTT()" class="mt-4 px-6 py-2.5 bg-brand-600 hover:bg-brand-500 text-white rounded-xl text-sm font-bold transition shadow-lg shadow-brand-500/20">Nuova Partita</button>
                 </div>
 
             </div>
         </section>
 
-        <!-- SEZIONE 2: RADIO & MUSIC PLAYER -->
+        <!-- SEZIONE 2: RADIO & MUSIC -->
         <section id="tab-radio" class="tab-content space-y-6">
-            <h2 class="text-2xl font-bold flex items-center gap-2">
-                <i class="fa-solid fa-radio text-brand-500"></i> <span data-i18n="sec_radio">Radio & Music Player</span>
+            <h2 class="text-2xl font-bold flex items-center gap-3 text-white">
+                <div class="p-2.5 rounded-xl bg-brand-500/10 text-brand-500 border border-brand-500/20"><i class="fa-solid fa-radio"></i></div>
+                <span data-i18n="sec_radio">Radio & Music Live</span>
             </h2>
-            <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-slate-200 dark:border-slate-700">
-                <div class="flex flex-col md:flex-row items-center gap-6">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80" alt="Music Cover" class="w-32 h-32 rounded-xl object-cover shadow-lg">
-                    <div class="flex-grow text-center md:text-left">
-                        <span id="currentStationName" class="text-sm font-semibold text-brand-500 uppercase tracking-wide">Seleziona una Stazione</span>
-                        <h3 id="currentTrackTitle" class="text-xl font-bold mt-1">Streaming Live</h3>
-                        <div class="mt-4 flex justify-center md:justify-start items-center gap-4">
-                            <audio id="audioPlayer" controls class="w-full max-w-md">
+            <div class="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-2xl">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80" alt="Cover" class="w-36 h-36 rounded-2xl object-cover shadow-2xl border border-slate-800">
+                    <div class="flex-grow text-center md:text-left w-full">
+                        <span id="currentStationName" class="text-xs font-bold text-brand-400 uppercase tracking-widest bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">Seleziona una Stazione</span>
+                        <h3 id="currentTrackTitle" class="text-2xl font-extrabold mt-3 text-white">Lofi Chill & Beats</h3>
+                        <div class="mt-6">
+                            <audio id="audioPlayer" controls class="w-full">
                                 <source id="audioSource" src="https://stream.zeno.fm/f3wvbbqmdg8uv" type="audio/mpeg">
-                                Il tuo browser non supporta l'elemento audio.
+                                Il browser non supporta l'audio.
                             </audio>
                         </div>
                     </div>
                 </div>
-                <!-- Selettore Stazioni -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
-                    <button onclick="playRadio('Lofi Chill Radio', 'https://stream.zeno.fm/f3wvbbqmdg8uv')" class="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg text-sm font-medium hover:bg-brand-500 hover:text-white transition text-center">
-                        🎧 Lofi Chill
-                    </button>
-                    <button onclick="playRadio('Pop Hits', 'https://stream.zeno.fm/037042a9268uv')" class="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg text-sm font-medium hover:bg-brand-500 hover:text-white transition text-center">
-                        🎵 Pop Hits
-                    </button>
-                    <button onclick="playRadio('Jazz Relax', 'https://stream.zeno.fm/4v34y2338bhvv')" class="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg text-sm font-medium hover:bg-brand-500 hover:text-white transition text-center">
-                        🎷 Jazz Bar
-                    </button>
-                    <button onclick="playRadio('Classical Music', 'https://stream.zeno.fm/912384a9268uv')" class="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg text-sm font-medium hover:bg-brand-500 hover:text-white transition text-center">
-                        🎻 Classica
-                    </button>
+                    <button onclick="playRadio('Lofi Chill Radio', 'https://stream.zeno.fm/f3wvbbqmdg8uv')" class="p-4 bg-slate-800/80 hover:bg-slate-800 rounded-2xl text-sm font-bold text-slate-200 border border-slate-700 transition text-center shadow">🎧 Lofi Chill</button>
+                    <button onclick="playRadio('Pop Hits', 'https://stream.zeno.fm/037042a9268uv')" class="p-4 bg-slate-800/80 hover:bg-slate-800 rounded-2xl text-sm font-bold text-slate-200 border border-slate-700 transition text-center shadow">🎵 Pop Hits</button>
+                    <button onclick="playRadio('Jazz Relax', 'https://stream.zeno.fm/4v34y2338bhvv')" class="p-4 bg-slate-800/80 hover:bg-slate-800 rounded-2xl text-sm font-bold text-slate-200 border border-slate-700 transition text-center shadow">🎷 Jazz Bar</button>
+                    <button onclick="playRadio('Classical Music', 'https://stream.zeno.fm/912384a9268uv')" class="p-4 bg-slate-800/80 hover:bg-slate-800 rounded-2xl text-sm font-bold text-slate-200 border border-slate-700 transition text-center shadow">🎻 Classica</button>
                 </div>
             </div>
         </section>
 
-        <!-- SEZIONE 3: AREA RELAX & SUONI AMBIENTALI -->
+        <!-- SEZIONE 3: AREA RELAX -->
         <section id="tab-relax" class="tab-content space-y-6">
-            <h2 class="text-2xl font-bold flex items-center gap-2">
-                <i class="fa-solid fa-spa text-brand-500"></i> <span data-i18n="sec_relax">Area Relax & Meditazione</span>
+            <h2 class="text-2xl font-bold flex items-center gap-3 text-white">
+                <div class="p-2.5 rounded-xl bg-brand-500/10 text-brand-500 border border-brand-500/20"><i class="fa-solid fa-spa"></i></div>
+                <span data-i18n="sec_relax">Area Relax & Meditazione</span>
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <!-- Generator 1: Pioggia -->
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 text-center shadow-sm">
-                    <div class="w-16 h-16 mx-auto bg-blue-100 dark:bg-blue-900/40 text-blue-500 rounded-full flex items-center justify-center text-2xl mb-4">
-                        <i class="fa-solid fa-cloud-rain"></i>
-                    </div>
-                    <h3 class="font-bold mb-2" data-i18n="sound_rain">Pioggia Rilassante</h3>
-                    <button onclick="toggleAmbientSound('rain')" id="btn-rain" class="px-4 py-2 bg-brand-500 text-white rounded-lg text-sm font-medium hover:bg-brand-600 transition">Play</button>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 text-center shadow-xl">
+                    <div class="w-16 h-16 mx-auto bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mb-4 border border-blue-500/20"><i class="fa-solid fa-cloud-rain"></i></div>
+                    <h3 class="font-bold text-lg mb-2 text-white" data-i18n="sound_rain">Pioggia Rilassante</h3>
+                    <button onclick="toggleAmbientSound('rain')" id="btn-rain" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white rounded-xl text-sm font-bold transition shadow-lg shadow-brand-500/20">Play</button>
                 </div>
-                <!-- Generator 2: Foresta -->
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 text-center shadow-sm">
-                    <div class="w-16 h-16 mx-auto bg-emerald-100 dark:bg-emerald-900/40 text-emerald-500 rounded-full flex items-center justify-center text-2xl mb-4">
-                        <i class="fa-solid fa-tree"></i>
-                    </div>
-                    <h3 class="font-bold mb-2" data-i18n="sound_forest">Natura & Uccelli</h3>
-                    <button onclick="toggleAmbientSound('forest')" id="btn-forest" class="px-4 py-2 bg-brand-500 text-white rounded-lg text-sm font-medium hover:bg-brand-600 transition">Play</button>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 text-center shadow-xl">
+                    <div class="w-16 h-16 mx-auto bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mb-4 border border-emerald-500/20"><i class="fa-solid fa-tree"></i></div>
+                    <h3 class="font-bold text-lg mb-2 text-white" data-i18n="sound_forest">Natura & Uccelli</h3>
+                    <button onclick="toggleAmbientSound('forest')" id="btn-forest" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white rounded-xl text-sm font-bold transition shadow-lg shadow-brand-500/20">Play</button>
                 </div>
-                <!-- Generator 3: Onde del Mare -->
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 text-center shadow-sm">
-                    <div class="w-16 h-16 mx-auto bg-cyan-100 dark:bg-cyan-900/40 text-cyan-500 rounded-full flex items-center justify-center text-2xl mb-4">
-                        <i class="fa-solid fa-water"></i>
-                    </div>
-                    <h3 class="font-bold mb-2" data-i18n="sound_ocean">Onde dell'Oceano</h3>
-                    <button onclick="toggleAmbientSound('ocean')" id="btn-ocean" class="px-4 py-2 bg-brand-500 text-white rounded-lg text-sm font-medium hover:bg-brand-600 transition">Play</button>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 text-center shadow-xl">
+                    <div class="w-16 h-16 mx-auto bg-cyan-500/10 text-cyan-400 rounded-2xl flex items-center justify-center text-2xl mb-4 border border-cyan-500/20"><i class="fa-solid fa-water"></i></div>
+                    <h3 class="font-bold text-lg mb-2 text-white" data-i18n="sound_ocean">Onde dell'Oceano</h3>
+                    <button onclick="toggleAmbientSound('ocean')" id="btn-ocean" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white rounded-xl text-sm font-bold transition shadow-lg shadow-brand-500/20">Play</button>
                 </div>
             </div>
         </section>
 
-        <!-- SEZIONE 4: QUIZ & STORIE AI -->
+        <!-- SEZIONE 4: QUIZ & AI -->
         <section id="tab-quiz" class="tab-content space-y-6">
-            <h2 class="text-2xl font-bold flex items-center gap-2">
-                <i class="fa-solid fa-brain text-brand-500"></i> <span data-i18n="sec_quiz">Quiz & Storie AI</span>
+            <h2 class="text-2xl font-bold flex items-center gap-3 text-white">
+                <div class="p-2.5 rounded-xl bg-brand-500/10 text-brand-500 border border-brand-500/20"><i class="fa-solid fa-brain"></i></div>
+                <span data-i18n="sec_quiz">Quiz & Storie AI</span>
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Generatore di Storie -->
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i> Generatore di Storie Brevi
-                    </h3>
-                    <label class="block text-sm font-medium mb-2">Scegli un genere:</label>
-                    <select id="storyGenre" class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 mb-4">
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-xl">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2 text-white"><i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> Generatore di Storie</h3>
+                    <label class="block text-sm font-medium mb-2 text-slate-300">Scegli un genere:</label>
+                    <select id="storyGenre" class="w-full p-3 rounded-xl border border-slate-700 bg-slate-950 text-white mb-4 focus:outline-none focus:border-brand-500">
                         <option value="sci-fi">Fantascienza</option>
                         <option value="fantasy">Fantasy</option>
                         <option value="mystery">Giallo / Mistero</option>
                     </select>
-                    <button onclick="generateStory()" class="w-full py-2.5 bg-brand-500 text-white rounded-lg font-medium hover:bg-brand-600 transition">
-                        Genera Storia con AI
-                    </button>
-                    <div id="storyOutput" class="mt-4 p-4 bg-slate-50 dark:bg-slate-900 rounded-lg text-sm border border-slate-200 dark:border-slate-800 hidden italic"></div>
+                    <button onclick="generateStory()" class="w-full py-3 bg-brand-600 hover:bg-brand-500 text-white rounded-xl font-bold transition shadow-lg shadow-brand-500/20">Genera Storia con AI</button>
+                    <div id="storyOutput" class="mt-4 p-4 bg-slate-950 rounded-xl text-sm border border-slate-800 hidden italic text-slate-300"></div>
                 </div>
-                <!-- Mini Quiz Interattivo -->
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-question-circle text-indigo-500"></i> Mini Quiz di Cultura Generale
-                    </h3>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-xl">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2 text-white"><i class="fa-solid fa-question-circle text-indigo-400"></i> Mini Quiz di Cultura</h3>
                     <div id="quizContainer">
-                        <p id="quizQuestion" class="font-medium mb-4">Qual è il pianeta più grande del sistema solare?</p>
+                        <p id="quizQuestion" class="font-medium mb-4 text-white">Qual è il pianeta più grande del sistema solare?</p>
                         <div class="space-y-2">
-                            <button onclick="checkAnswer(false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition">A) Marte</button>
-                            <button onclick="checkAnswer(true)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition">B) Giove</button>
-                            <button onclick="checkAnswer(false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition">C) Saturno</button>
+                            <button onclick="checkAnswer(false)" class="w-full text-left p-3 rounded-xl border border-slate-800 bg-slate-950 hover:bg-slate-800 text-slate-200 transition">A) Marte</button>
+                            <button onclick="checkAnswer(true)" class="w-full text-left p-3 rounded-xl border border-slate-800 bg-slate-950 hover:bg-slate-800 text-slate-200 transition">B) Giove</button>
+                            <button onclick="checkAnswer(false)" class="w-full text-left p-3 rounded-xl border border-slate-800 bg-slate-950 hover:bg-slate-800 text-slate-200 transition">C) Saturno</button>
                         </div>
                     </div>
                     <div id="quizResult" class="mt-4 hidden font-semibold text-center"></div>
@@ -271,67 +237,64 @@
 
         <!-- SEZIONE 5: COMMUNITY CHAT -->
         <section id="tab-chat" class="tab-content space-y-6">
-            <h2 class="text-2xl font-bold flex items-center gap-2">
-                <i class="fa-solid fa-comments text-brand-500"></i> <span data-i18n="sec_chat">Chat Community</span>
+            <h2 class="text-2xl font-bold flex items-center gap-3 text-white">
+                <div class="p-2.5 rounded-xl bg-brand-500/10 text-brand-500 border border-brand-500/20"><i class="fa-solid fa-comments"></i></div>
+                <span data-i18n="sec_chat">Chat Community</span>
             </h2>
-            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-4 max-w-2xl mx-auto">
-                <div id="chatMessages" class="h-64 overflow-y-auto border border-slate-100 dark:border-slate-700 rounded-lg p-4 mb-4 space-y-3 bg-slate-50 dark:bg-slate-900">
-                    <div class="bg-white dark:bg-slate-800 p-2.5 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 max-w-xs">
-                        <span class="text-xs font-bold text-brand-500">Marco</span>
-                        <p class="text-sm">Benvenuti nel nuovo hub polivalente!</p>
+            <div class="bg-slate-900 rounded-2xl shadow-xl border border-slate-800 p-6 max-w-2xl mx-auto">
+                <div id="chatMessages" class="h-64 overflow-y-auto border border-slate-800 rounded-xl p-4 mb-4 space-y-3 bg-slate-950">
+                    <div class="bg-slate-900 p-3 rounded-xl shadow border border-slate-800 max-w-xs">
+                        <span class="text-xs font-bold text-brand-400">Marco</span>
+                        <p class="text-sm text-slate-200 mt-1">Benvenuti nel nuovo hub polivalente!</p>
                     </div>
                 </div>
                 <div class="flex gap-2">
-                    <input type="text" id="chatInput" placeholder="Scrivi un messaggio..." class="flex-grow p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
-                    <button onclick="sendMessage()" class="px-4 py-2.5 bg-brand-500 text-white rounded-lg text-sm font-medium hover:bg-brand-600 transition">Invia</button>
+                    <input type="text" id="chatInput" placeholder="Scrivi un messaggio..." class="flex-grow p-3 rounded-xl border border-slate-700 bg-slate-950 text-white text-sm focus:outline-none focus:border-brand-500">
+                    <button onclick="sendMessage()" class="px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white rounded-xl text-sm font-bold transition shadow-lg shadow-brand-500/20">Invia</button>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-slate-500">
+    <footer class="bg-slate-900 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-slate-400">
             <p>© 2026 NexusHub. Tutti i diritti riservati. Realizzato con HTML5 & Tailwind CSS.</p>
         </div>
     </footer>
 
-    <!-- BOTPRESS ASSISTENTE AI WIDGET -->
-    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-    <script src="https://mediafiles.botpress.cloud/5234/webchat/config.js" defer></script>
-
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- SCRIPT JAVASCRIPT -->
     <script>
         const translations = {
             it: {
                 nav_games: "Giochi",
                 nav_radio: "Radio",
                 nav_relax: "Area Relax",
-                nav_quiz: "Quiz & Storie",
+                nav_quiz: "Quiz & AI",
                 nav_chat: "Community",
-                hero_badge: "Portale Intrattenimento",
-                hero_title: "Esplora, Rilassati e Gioca in un Unico Posto",
-                hero_subtitle: "Accedi a giochi istantanei, stazioni radio live, ambienti sonori di meditazione e contenuti AI.",
-                sec_games: "Giochi HTML5",
-                sec_radio: "Radio & Music Player",
+                hero_badge: "✨ Universal Entertainment Hub",
+                hero_title: "Esplora, Gioca e Rilassati Senza Limiti",
+                hero_subtitle: "Tutto ciò che ami in un'unica piattaforma multilingue istantanea, interattiva e gratuita.",
+                sec_games: "Arcade & Mini-Games",
+                sec_radio: "Radio & Music Live",
                 sec_relax: "Area Relax & Meditazione",
                 sound_rain: "Pioggia Rilassante",
                 sound_forest: "Natura & Uccelli",
                 sound_ocean: "Onde dell'Oceano",
                 sec_quiz: "Quiz & Storie AI",
-                sec_chat: "Community Chat"
+                sec_chat: "Chat Community"
             },
             en: {
                 nav_games: "Games",
                 nav_radio: "Radio",
-                nav_relax: "Relax Zone",
-                nav_quiz: "Quiz & Stories",
+                nav_relax: "Relax",
+                nav_quiz: "Quiz & AI",
                 nav_chat: "Community",
-                hero_badge: "Entertainment Hub",
-                hero_title: "Explore, Relax and Play in One Place",
-                hero_subtitle: "Access instant games, live radio stations, ambient soundscapes, and AI content.",
-                sec_games: "HTML5 Games",
-                sec_radio: "Radio & Music Player",
+                hero_badge: "✨ Universal Entertainment Hub",
+                hero_title: "Explore, Play and Relax Without Limits",
+                hero_subtitle: "Everything you love in a single instant, interactive, free multilingual platform.",
+                sec_games: "Arcade & Mini-Games",
+                sec_radio: "Radio & Music Live",
                 sec_relax: "Relaxation & Meditation",
                 sound_rain: "Relaxing Rain",
                 sound_forest: "Nature & Birds",
@@ -342,14 +305,14 @@
             fr: {
                 nav_games: "Jeux",
                 nav_radio: "Radio",
-                nav_relax: "Espace Relax",
-                nav_quiz: "Quiz & Histoires",
+                nav_relax: "Relax",
+                nav_quiz: "Quiz & IA",
                 nav_chat: "Communauté",
-                hero_badge: "Portail Divertissement",
-                hero_title: "Explorez, détendez-vous et jouez au même endroit",
-                hero_subtitle: "Accédez à des jeux instantanés, des radios en direct, des sons relaxants et du contenu IA.",
-                sec_games: "Jeux HTML5",
-                sec_radio: "Radio & Musique",
+                hero_badge: "✨ Hub de Divertissement Universel",
+                hero_title: "Explorez, jouez et détendez-vous sans limites",
+                hero_subtitle: "Tout ce que vous aimez dans une plateforme multilingue instantanée et gratuite.",
+                sec_games: "Arcade & Mini-Jeux",
+                sec_radio: "Radio & Musique Live",
                 sec_relax: "Relaxation & Méditation",
                 sound_rain: "Pluie Relaxante",
                 sound_forest: "Nature & Oiseaux",
@@ -360,49 +323,44 @@
             es: {
                 nav_games: "Juegos",
                 nav_radio: "Radio",
-                nav_relax: "Zona Relax",
-                nav_quiz: "Quiz y Historias",
+                nav_relax: "Relax",
+                nav_quiz: "Quiz e IA",
                 nav_chat: "Comunidad",
-                hero_badge: "Portal de Entretenimiento",
-                hero_title: "Explora, Relájate y Juega en un Solo Lugar",
-                hero_subtitle: "Accede a juegos instantáneos, radios en vivo, sonidos ambientales y contenido de IA.",
-                sec_games: "Juegos HTML5",
-                sec_radio: "Radio y Música",
+                hero_badge: "✨ Hub de Entretenimiento Universal",
+                hero_title: "Explora, Juega y Relájate sin Límites",
+                hero_subtitle: "Todo lo que amas en una plataforma multilingüe instantánea, interactiva y gratuita.",
+                sec_games: "Arcade y Mini-Juegos",
+                sec_radio: "Radio y Música Live",
                 sec_relax: "Relajación y Meditación",
                 sound_rain: "Lluvia Relajante",
                 sound_forest: "Naturaleza y Pájaros",
                 sound_ocean: "Olas del Mar",
-                sec_quiz: "Quiz y Historias IA",
+                sec_quiz: "Quiz e Historias IA",
                 sec_chat: "Chat de la Comunidad"
             },
             ar: {
                 nav_games: "ألعاب",
                 nav_radio: "راديو",
-                nav_relax: "منطقة الاسترخاء",
-                nav_quiz: "مسابقات وقصص",
+                nav_relax: "استرخاء",
+                nav_quiz: "مسابقات وذكاء اصطناعي",
                 nav_chat: "المجتمع",
-                hero_badge: "مركز الترفيه",
-                hero_title: "استكشف واسترح والعب في مكان واحد",
-                hero_subtitle: "احصل على ألعاب فورية ومحطات راديو مباشرة وأصوات طبيعية ومحتوى الذكاء الاصطناعي.",
-                sec_games: "ألعاب HTML5",
-                sec_radio: "الراديو والموسيقى",
+                hero_badge: "✨ مركز الترفيه الشامل",
+                hero_title: "استكشف والعب واسترخ بلا حدود",
+                hero_subtitle: "كل ما تحبه في منصة متعددة اللغات فورية وتفاعلية ومجانية بالكامل.",
+                sec_games: "ألعاب مصغرة",
+                sec_radio: "راديو وموسيقى مباشرة",
                 sec_relax: "الاسترخاء والتأمل",
                 sound_rain: "مطر مريح",
                 sound_forest: "الطبيعة والطيور",
                 sound_ocean: "أمواج المحيط",
-                sec_quiz: "اختبارات وقصص الذكاء الاصطناعي",
+                sec_quiz: "مسابقات وقصص الذكاء الاصطناعي",
                 sec_chat: "دردشة المجتمع"
             }
         };
 
         function changeLanguage(lang) {
             const htmlTag = document.documentElement;
-            if (lang === 'ar') {
-                htmlTag.setAttribute('dir', 'rtl');
-            } else {
-                htmlTag.setAttribute('dir', 'ltr');
-            }
-            
+            htmlTag.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
             const elements = document.querySelectorAll('[data-i18n]');  
             elements.forEach(el => {  
                 const key = el.getAttribute('data-i18n');  
@@ -413,21 +371,8 @@
         }
 
         function switchTab(tabId) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             document.getElementById('tab-' + tabId).classList.add('active');
-        }
-
-        function toggleTheme() {
-            const htmlTag = document.documentElement;
-            const themeIcon = document.getElementById('themeIcon');
-            if (htmlTag.classList.contains('dark')) {
-                htmlTag.classList.remove('dark');
-                themeIcon.className = "fa-solid fa-moon";
-            } else {
-                htmlTag.classList.add('dark');
-                themeIcon.className = "fa-solid fa-sun";
-            }
         }
 
         function playRadio(name, url) {
@@ -448,19 +393,16 @@
                 ambientOsc.stop();
                 ambientOsc = null;
                 btn.textContent = "Play";
-                btn.classList.remove('bg-red-500');
-                btn.classList.add('bg-brand-500');
+                btn.classList.remove('bg-rose-600');
+                btn.classList.add('bg-brand-600');
             } else {
                 const bufferSize = audioCtx.sampleRate * 2;
                 const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
                 const data = buffer.getChannelData(0);
-                for (let i = 0; i < bufferSize; i++) {
-                    data[i] = Math.random() * 2 - 1;
-                }
+                for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
                 const noise = audioCtx.createBufferSource();
                 noise.buffer = buffer;
                 noise.loop = true;
-                
                 const filter = audioCtx.createBiquadFilter();
                 filter.type = type === 'rain' ? 'lowpass' : 'bandpass';
                 filter.frequency.value = type === 'rain' ? 800 : 400;
@@ -469,8 +411,8 @@
                 noise.start();
                 ambientOsc = noise;
                 btn.textContent = "Stop";
-                btn.classList.remove('bg-brand-500');
-                btn.classList.add('bg-red-500');
+                btn.classList.remove('bg-brand-600');
+                btn.classList.add('bg-rose-600');
             }
         }
 
@@ -481,12 +423,12 @@
             output.textContent = "Generazione storia in corso...";
             setTimeout(() => {
                 const stories = {
-                    "sci-fi": "Nel 2145, la stazione spaziale Alpha ricevette un segnale proveniente dal centro di un buco nero. Non era un errore: era un codice binario che conteneva le coordinate di una Terra parallela.",
+                    "sci-fi": "Nel 2145, la stazione spaziale Alpha ricevette un segnale proveniente dal centro di un buco nero: coordinate esatte di una Terra parallela.",
                     "fantasy": "La spada incastonata nella roccia di Eldoria non attendeva un re, ma un bardo capace di cantare la nota dimenticata della creazione.",
-                    "mystery": "L'orologio della torre suonò tredici rintocchi. Fu in quel momento che l'investigatore Vane capì che il colpevole non era mai uscito dalla stanza."
+                    "mystery": "L'orologio della torre suonò tredici rintocchi. Fu in quel momento che l'investigatore capì che il colpevole era ancora nella stanza."
                 };
-                output.textContent = stories[genre] || "Storia non trovata.";
-            }, 1000);
+                output.textContent = stories[genre] || "Storia generata con successo.";
+            }, 800);
         }
 
         function checkAnswer(isCorrect) {
@@ -494,10 +436,10 @@
             result.classList.remove('hidden');
             if (isCorrect) {
                 result.textContent = "🎉 Risposta Corretta!";
-                result.className = "mt-4 text-emerald-500 font-semibold text-center";
+                result.className = "mt-4 text-emerald-400 font-bold text-center";
             } else {
                 result.textContent = "❌ Risposta Errata, riprova!";
-                result.className = "mt-4 text-rose-500 font-semibold text-center";
+                result.className = "mt-4 text-rose-400 font-bold text-center";
             }
         }
 
@@ -506,38 +448,28 @@
             const container = document.getElementById('chatMessages');
             if (input.value.trim() !== '') {
                 const msg = document.createElement('div');
-                msg.className = "bg-brand-500 text-white p-2.5 rounded-lg shadow-sm ml-auto max-w-xs text-right";
-                msg.innerHTML = `<span class="text-xs font-bold text-brand-100">Tu</span><p class="text-sm">${input.value}</p>`;
+                msg.className = "bg-brand-600 text-white p-3 rounded-xl shadow ml-auto max-w-xs text-right";
+                msg.innerHTML = `<span class="text-xs font-bold text-emerald-200">Tu</span><p class="text-sm mt-1">${input.value}</p>`;
                 container.appendChild(msg);
                 input.value = '';
                 container.scrollTop = container.scrollHeight;
             }
         }
 
-        /* --- LOGICA SNAKE GAME (NATIVO) --- */
+        /* SNAKE LOGIC */
         const canvas = document.getElementById("snakeCanvas");
         const ctx = canvas.getContext("2d");
-        const grid = 15;
-        let count = 0;
-        let score = 0;
-        let snake = { x: 150, y: 150, dx: grid, dy: 0, cells: [], maxCells: 4 };
-        let apple = { x: 60, y: 60 };
+        const grid = 14;
+        let count = 0, score = 0;
+        let snake = { x: 140, y: 140, dx: grid, dy: 0, cells: [], maxCells: 4 };
+        let apple = { x: 56, y: 56 };
 
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min)) + min;
-        }
+        function getRandomInt(min, max) { return Math.floor(Math.random() * (max - min)) + min; }
 
         function resetSnake() {
-            snake.x = 150;
-            snake.y = 150;
-            snake.cells = [];
-            snake.maxCells = 4;
-            snake.dx = grid;
-            snake.dy = 0;
-            score = 0;
-            document.getElementById("snakeScore").innerText = score;
-            apple.x = getRandomInt(0, 20) * grid;
-            apple.y = getRandomInt(0, 20) * grid;
+            snake.x = 140; snake.y = 140; snake.cells = []; snake.maxCells = 4; snake.dx = grid; snake.dy = 0;
+            score = 0; document.getElementById("snakeScore").innerText = score;
+            apple.x = getRandomInt(0, 20) * grid; apple.y = getRandomInt(0, 20) * grid;
         }
 
         function changeSnakeDir(dir) {
@@ -549,44 +481,33 @@
 
         function snakeLoop() {
             requestAnimationFrame(snakeLoop);
-            if (++count < 6) return;
+            if (++count < 7) return;
             count = 0;
             ctx.clearRect(0,0,canvas.width,canvas.height);
-
-            snake.x += snake.dx;
-            snake.y += snake.dy;
-
+            snake.x += snake.dx; snake.y += snake.dy;
             if (snake.x < 0) snake.x = canvas.width - grid;
             else if (snake.x >= canvas.width) snake.x = 0;
             if (snake.y < 0) snake.y = canvas.height - grid;
             else if (snake.y >= canvas.height) snake.y = 0;
-
             snake.cells.unshift({x: snake.x, y: snake.y});
             if (snake.cells.length > snake.maxCells) snake.cells.pop();
-
-            ctx.fillStyle = '#ef4444';
-            ctx.fillRect(apple.x, apple.y, grid-1, grid-1);
-
-            ctx.fillStyle = '#0284c7';
+            ctx.fillStyle = '#f43f5e'; ctx.fillRect(apple.x, apple.y, grid-1, grid-1);
+            ctx.fillStyle = '#10b981';
             snake.cells.forEach(function(cell, index) {
                 ctx.fillRect(cell.x, cell.y, grid-1, grid-1);
                 if (cell.x === apple.x && cell.y === apple.y) {
-                    snake.maxCells++;
-                    score += 10;
+                    snake.maxCells++; score += 10;
                     document.getElementById("snakeScore").innerText = score;
-                    apple.x = getRandomInt(0, 20) * grid;
-                    apple.y = getRandomInt(0, 20) * grid;
+                    apple.x = getRandomInt(0, 20) * grid; apple.y = getRandomInt(0, 20) * grid;
                 }
                 for (let i = index + 1; i < snake.cells.length; i++) {
-                    if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-                        resetSnake();
-                    }
+                    if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) resetSnake();
                 }
             });
         }
         requestAnimationFrame(snakeLoop);
 
-        /* --- LOGICA TRIS / TIC TAC TOE (NATIVO) --- */
+        /* TIC TAC TOE LOGIC */
         let tttState = ["", "", "", "", "", "", "", "", ""];
         let tttPlayer = "X";
         let tttActive = true;
@@ -596,44 +517,30 @@
             tttState[index] = tttPlayer;
             const cells = document.querySelectorAll('.ttt-cell');
             cells[index].innerText = tttPlayer;
-            cells[index].classList.add(tttPlayer === 'X' ? 'text-brand-500' : 'text-rose-500');
-
+            cells[index].classList.add(tttPlayer === 'X' ? 'text-brand-400' : 'text-rose-400');
             if (checkTTTWin()) {
                 document.getElementById('tttStatus').innerText = `Vincitore: ${tttPlayer}!`;
-                tttActive = false;
-                return;
+                tttActive = false; return;
             }
             if (!tttState.includes("")) {
                 document.getElementById('tttStatus').innerText = "Pareggio!";
-                tttActive = false;
-                return;
+                tttActive = false; return;
             }
-
             tttPlayer = tttPlayer === "X" ? "O" : "X";
             document.getElementById('tttStatus').innerText = `Turno: ${tttPlayer}`;
         }
 
         function checkTTTWin() {
-            const wins = [
-                [0,1,2], [3,4,5], [6,7,8],
-                [0,3,6], [1,4,7], [2,5,8],
-                [0,4,8], [2,4,6]
-            ];
-            return wins.some(comb => {
-                return comb.every(i => tttState[i] === tttPlayer);
-            });
+            const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+            return wins.some(c => c.every(i => tttState[i] === tttPlayer));
         }
 
         function resetTTT() {
             tttState = ["", "", "", "", "", "", "", "", ""];
-            tttPlayer = "X";
-            tttActive = true;
+            tttPlayer = "X"; tttActive = true;
             document.getElementById('tttStatus').innerText = "Turno: X";
             const cells = document.querySelectorAll('.ttt-cell');
-            cells.forEach(c => {
-                c.innerText = "";
-                c.classList.remove('text-brand-500', 'text-rose-500');
-            });
+            cells.forEach(c => { c.innerText = ""; c.classList.remove('text-brand-400', 'text-rose-400'); });
         }
     </script>
 </body>  
